@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Microlearning Series</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="xapi-wrapper.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">📱</div>
+                    <h1>MicroLearn</h1>
+                </div>
+                <div class="progress-indicator">
+                    <span class="lesson-counter" id="lessonCounter">Lesson 1 of 3</span>
+                    <div class="overall-progress">
+                        <div class="overall-progress-fill" id="overallProgress"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Lesson Container -->
+        <main class="lesson-container">
+            <!-- Lesson 1: Digital Communication Basics -->
+            <section class="lesson active" id="lesson1">
+                <div class="lesson-header">
+                    <div class="lesson-badge">Lesson 1</div>
+                    <h2>Digital Communication Basics</h2>
+                    <div class="lesson-meta">
+                        <span class="duration">⏱️ 2 min read</span>
+                        <span class="difficulty">📊 Beginner</span>
+                    </div>
+                </div>
+
+                <div class="lesson-content">
+                    <div class="content-block">
+                        <div class="content-icon">💬</div>
+                        <h3>Why Digital Communication Matters</h3>
+                        <p>In today's workplace, effective digital communication is essential for productivity, collaboration, and professional success.</p>
+                    </div>
+
+                    <div class="interactive-element">
+                        <div class="flip-card" onclick="flipCard(this)">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h4>📧 Email Best Practices</h4>
+                                    <p>Click to reveal key tips</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <ul>
+                                        <li>Clear, descriptive subject lines</li>
+                                        <li>Concise, structured content</li>
+                                        <li>Professional tone and formatting</li>
+                                        <li>Appropriate use of CC/BCC</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-block">
+                        <div class="content-icon">🎯</div>
+                        <h3>Key Principles</h3>
+                        <div class="principle-grid">
+                            <div class="principle-card">
+                                <div class="principle-number">1</div>
+                                <h4>Clarity</h4>
+                                <p>Be clear and specific in your message</p>
+                            </div>
+                            <div class="principle-card">
+                                <div class="principle-number">2</div>
+                                <h4>Conciseness</h4>
+                                <p>Respect others' time with brief messages</p>
+                            </div>
+                            <div class="principle-card">
+                                <div class="principle-number">3</div>
+                                <h4>Context</h4>
+                                <p>Provide necessary background information</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="knowledge-check">
+                        <h3>Quick Check</h3>
+                        <div class="question-card">
+                            <p>Which is the most important element of professional email communication?</p>
+                            <div class="answer-options">
+                                <button class="answer-btn" onclick="selectAnswer(this, false)">Using fancy fonts and colors</button>
+                                <button class="answer-btn" onclick="selectAnswer(this, true)">Clear subject line and concise content</button>
+                                <button class="answer-btn" onclick="selectAnswer(this, false)">Including lots of emojis</button>
+                            </div>
+                            <div class="feedback" id="feedback1" style="display: none;">
+                                <p class="feedback-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-navigation">
+                    <button class="nav-btn primary" onclick="completeLesson(1)">Complete Lesson 1</button>
+                </div>
+            </section>
+
+            <!-- Lesson 2: Virtual Meeting Excellence -->
+            <section class="lesson" id="lesson2">
+                <div class="lesson-header">
+                    <div class="lesson-badge">Lesson 2</div>
+                    <h2>Virtual Meeting Excellence</h2>
+                    <div class="lesson-meta">
+                        <span class="duration">⏱️ 2 min read</span>
+                        <span class="difficulty">📊 Intermediate</span>
+                    </div>
+                </div>
+
+                <div class="lesson-content">
+                    <div class="content-block">
+                        <div class="content-icon">🎥</div>
+                        <h3>Mastering Virtual Meetings</h3>
+                        <p>Virtual meetings require different skills than in-person meetings. Learn how to engage effectively in digital spaces.</p>
+                    </div>
+
+                    <div class="interactive-timeline">
+                        <h3>Meeting Timeline</h3>
+                        <div class="timeline">
+                            <div class="timeline-item" onclick="expandTimelineItem(this)">
+                                <div class="timeline-marker">📋</div>
+                                <div class="timeline-content">
+                                    <h4>Before the Meeting</h4>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Test your technology</li>
+                                            <li>Prepare your environment</li>
+                                            <li>Review the agenda</li>
+                                            <li>Gather necessary materials</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item" onclick="expandTimelineItem(this)">
+                                <div class="timeline-marker">🎬</div>
+                                <div class="timeline-content">
+                                    <h4>During the Meeting</h4>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Join on time</li>
+                                            <li>Mute when not speaking</li>
+                                            <li>Use video appropriately</li>
+                                            <li>Engage actively</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item" onclick="expandTimelineItem(this)">
+                                <div class="timeline-marker">📝</div>
+                                <div class="timeline-content">
+                                    <h4>After the Meeting</h4>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Send follow-up notes</li>
+                                            <li>Complete action items</li>
+                                            <li>Schedule next steps</li>
+                                            <li>Provide feedback</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interactive-element">
+                        <div class="scenario-simulator">
+                            <h3>Meeting Scenario</h3>
+                            <div class="scenario-content">
+                                <p>You're in a virtual team meeting when your internet connection becomes unstable. What's your best response?</p>
+                                <div class="scenario-options">
+                                    <button class="scenario-btn" onclick="handleScenario(this, 'poor')">Continue without mentioning it</button>
+                                    <button class="scenario-btn" onclick="handleScenario(this, 'good')">Briefly explain and offer to follow up</button>
+                                    <button class="scenario-btn" onclick="handleScenario(this, 'poor')">Leave the meeting immediately</button>
+                                </div>
+                                <div class="scenario-feedback" style="display: none;">
+                                    <p class="scenario-result"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="knowledge-check">
+                        <h3>Quick Check</h3>
+                        <div class="question-card">
+                            <p>What's the most important virtual meeting etiquette rule?</p>
+                            <div class="answer-options">
+                                <button class="answer-btn" onclick="selectAnswer(this, false)">Always keep your camera on</button>
+                                <button class="answer-btn" onclick="selectAnswer(this, true)">Mute yourself when not speaking</button>
+                                <button class="answer-btn" onclick="selectAnswer(this, false)">Use a virtual background</button>
+                            </div>
+                            <div class="feedback" id="feedback2" style="display: none;">
+                                <p class="feedback-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-navigation">
+                    <button class="nav-btn secondary" onclick="previousLesson()">← Previous</button>
+                    <button class="nav-btn primary" onclick="completeLesson(2)">Complete Lesson 2</button>
+                </div>
+            </section>
+
+            <!-- Lesson 3: Digital Collaboration Tools -->
+            <section class="lesson" id="lesson3">
+                <div class="lesson-header">
+                    <div class="lesson-badge">Lesson 3</div>
+                    <h2>Digital Collaboration Tools</h2>
+                    <div class="lesson-meta">
+                        <span class="duration">⏱️ 2 min read</span>
+                        <span class="difficulty">📊 Advanced</span>
+                    </div>
+                </div>
+
+                <div class="lesson-content">
+                    <div class="content-block">
+                        <div class="content-icon">🛠️</div>
+                        <h3>Collaboration in the Digital Age</h3>
+                        <p>Modern teams rely on digital tools to collaborate effectively across time zones and locations. Master these essential platforms.</p>
+                    </div>
+
+                    <div class="tool-showcase">
+                        <h3>Essential Tools</h3>
+                        <div class="tool-grid">
+                            <div class="tool-card" onclick="expandTool(this)">
+                                <div class="tool-icon">💬</div>
+                                <h4>Instant Messaging</h4>
+                                <p>Slack, Teams, Discord</p>
+                                <div class="tool-details">
+                                    <ul>
+                                        <li>Real-time communication</li>
+                                        <li>Channel organization</li>
+                                        <li>File sharing</li>
+                                        <li>Integration capabilities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tool-card" onclick="expandTool(this)">
+                                <div class="tool-icon">📋</div>
+                                <h4>Project Management</h4>
+                                <p>Asana, Trello, Monday</p>
+                                <div class="tool-details">
+                                    <ul>
+                                        <li>Task tracking</li>
+                                        <li>Timeline management</li>
+                                        <li>Team coordination</li>
+                                        <li>Progress visualization</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tool-card" onclick="expandTool(this)">
+                                <div class="tool-icon">📄</div>
+                                <h4>Document Collaboration</h4>
+                                <p>Google Workspace, Office 365</p>
+                                <div class="tool-details">
+                                    <ul>
+                                        <li>Real-time editing</li>
+                                        <li>Version control</li>
+                                        <li>Comment systems</li>
+                                        <li>Access permissions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interactive-element">
+                        <div class="best-practices-accordion">
+                            <h3>Best Practices</h3>
+                            <div class="accordion-item" onclick="toggleAccordion(this)">
+                                <div class="accordion-header">
+                                    <h4>🎯 Choose the Right Tool</h4>
+                                    <span class="accordion-icon">+</span>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Select tools based on your team's specific needs, size, and workflow. Consider integration capabilities and learning curves.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item" onclick="toggleAccordion(this)">
+                                <div class="accordion-header">
+                                    <h4>📱 Mobile Optimization</h4>
+                                    <span class="accordion-icon">+</span>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Ensure your chosen tools work well on mobile devices for team members who work remotely or travel frequently.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item" onclick="toggleAccordion(this)">
+                                <div class="accordion-header">
+                                    <h4>🔒 Security First</h4>
+                                    <span class="accordion-icon">+</span>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Always prioritize security features, especially when handling sensitive information. Use proper access controls and encryption.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="knowledge-check">
+                        <h3>Final Check</h3>
+                        <div class="question-card">
+                            <p>When choosing a collaboration tool, what should be your primary consideration?</p>
+                            <div class="answer-options">
+                                <button class="answer-btn" onclick="selectAnswer(this, false)">The most popular option</button>
+                                <button class="answer-btn" onclick="selectAnswer(this, false)">The cheapest option</button>
+                                <button class="answer-btn" onclick="selectAnswer(this, true)">Your team's specific needs and workflow</button>
+                            </div>
+                            <div class="feedback" id="feedback3" style="display: none;">
+                                <p class="feedback-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-navigation">
+                    <button class="nav-btn secondary" onclick="previousLesson()">← Previous</button>
+                    <button class="nav-btn primary" onclick="completeLesson(3)">Complete Series</button>
+                </div>
+            </section>
+
+            <!-- Completion Screen -->
+            <section class="lesson" id="completion">
+                <div class="completion-container">
+                    <div class="completion-icon">🎉</div>
+                    <h2>Series Complete!</h2>
+                    <p>Congratulations! You've completed the Digital Communication Microlearning Series.</p>
+                    
+                    <div class="completion-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Lessons Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalTime">6</div>
+                            <div class="stat-label">Minutes Spent</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="accuracyScore">100</div>
+                            <div class="stat-label">% Accuracy</div>
+                        </div>
+                    </div>
+
+                    <div class="next-steps">
+                        <h3>What's Next?</h3>
+                        <div class="next-steps-grid">
+                            <div class="next-step-card">
+                                <div class="next-step-icon">📚</div>
+                                <h4>Advanced Series</h4>
+                                <p>Take the advanced digital communication course</p>
+                            </div>
+                            <div class="next-step-card">
+                                <div class="next-step-icon">👥</div>
+                                <h4>Team Training</h4>
+                                <p>Share these skills with your team</p>
+                            </div>
+                            <div class="next-step-card">
+                                <div class="next-step-icon">🏆</div>
+                                <h4>Certification</h4>
+                                <p>Earn your digital communication certificate</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="completion-actions">
+                        <button class="nav-btn primary" onclick="downloadCertificate()">📜 Download Certificate</button>
+                        <button class="nav-btn secondary" onclick="restartSeries()">🔄 Restart Series</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Floating Progress Indicator -->
+        <div class="floating-progress" id="floatingProgress">
+            <div class="progress-circle">
+                <svg class="progress-ring" width="60" height="60">
+                    <circle class="progress-ring-circle" stroke="#e0e0e0" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                    <circle class="progress-ring-fill" stroke="#4CAF50" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                </svg>
+                <div class="progress-percentage" id="progressPercentage">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Compliance Training</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scorm-wrapper.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">0% Complete</span>
+        </div>
+
+        <!-- Slide Container -->
+        <div class="slide-container">
+            <!-- Slide 1: Introduction -->
+            <div class="slide active" id="slide1">
+                <div class="content-area">
+                    <div class="character-container">
+                        <div class="character speaking" id="narrator">
+                            <div class="character-body"></div>
+                            <div class="speech-bubble">
+                                Welcome to our Interactive Compliance Training! I'm Sarah, your guide through today's scenarios.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-content">
+                        <h1>Workplace Ethics & Compliance</h1>
+                        <p>In this interactive training, you'll navigate real workplace scenarios and learn to make ethical decisions.</p>
+                        <ul>
+                            <li>✓ Interactive branching scenarios</li>
+                            <li>✓ Real-world decision points</li>
+                            <li>✓ Immediate feedback</li>
+                            <li>✓ Scored assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn-primary" onclick="nextSlide()">Start Training</button>
+                </div>
+            </div>
+
+            <!-- Slide 2: Scenario 1 Setup -->
+            <div class="slide" id="slide2">
+                <div class="content-area">
+                    <div class="scenario-header">
+                        <h2>Scenario 1: Confidential Information</h2>
+                        <div class="scenario-badge">Decision Point</div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="character-container">
+                            <div class="character" id="colleague">
+                                <div class="character-body colleague"></div>
+                                <div class="speech-bubble">
+                                    Hey, I heard you're working on the Johnson project. My friend works at their competitor - can you share some details about our proposal?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scenario-text">
+                            <p>You're at lunch with a colleague from another department. They ask about confidential project information that could benefit their friend at a competing company.</p>
+                            <p><strong>What do you do?</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <div class="decision-buttons">
+                        <button class="btn-decision" onclick="makeDecision('scenario1', 'share')">
+                            Share general information - it's just a colleague
+                        </button>
+                        <button class="btn-decision" onclick="makeDecision('scenario1', 'decline')">
+                            Politely decline and explain confidentiality policies
+                        </button>
+                        <button class="btn-decision" onclick="makeDecision('scenario1', 'redirect')">
+                            Redirect them to speak with the project manager
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Scenario 1 Feedback -->
+            <div class="slide" id="slide3">
+                <div class="content-area">
+                    <div class="feedback-container">
+                        <div class="feedback-header">
+                            <div class="feedback-icon" id="feedbackIcon">✓</div>
+                            <h2 id="feedbackTitle">Excellent Choice!</h2>
+                        </div>
+                        <div class="feedback-content" id="feedbackContent">
+                            <p>You made the right decision by protecting confidential information.</p>
+                        </div>
+                        <div class="learning-points">
+                            <h3>Key Learning Points:</h3>
+                            <ul id="learningPoints">
+                                <li>Always protect confidential company information</li>
+                                <li>Politely but firmly decline inappropriate requests</li>
+                                <li>When in doubt, refer to company policies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn-primary" onclick="nextSlide()">Continue to Next Scenario</button>
+                </div>
+            </div>
+
+            <!-- Slide 4: Scenario 2 Setup -->
+            <div class="slide" id="slide4">
+                <div class="content-area">
+                    <div class="scenario-header">
+                        <h2>Scenario 2: Workplace Harassment</h2>
+                        <div class="scenario-badge">Critical Decision</div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-text">
+                            <p>You witness a supervisor making inappropriate comments to a junior employee. The employee looks uncomfortable but hasn't said anything.</p>
+                            <div class="character-container">
+                                <div class="character supervisor">
+                                    <div class="character-body supervisor"></div>
+                                    <div class="speech-bubble">
+                                        You look nice today... that outfit really shows off your figure.
+                                    </div>
+                                </div>
+                                <div class="character employee">
+                                    <div class="character-body employee"></div>
+                                    <div class="thought-bubble">
+                                        This makes me so uncomfortable...
+                                    </div>
+                                </div>
+                            </div>
+                            <p><strong>What's your immediate response?</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <div class="decision-buttons">
+                        <button class="btn-decision" onclick="makeDecision('scenario2', 'ignore')">
+                            Stay out of it - it's not your business
+                        </button>
+                        <button class="btn-decision" onclick="makeDecision('scenario2', 'intervene')">
+                            Immediately intervene and redirect the conversation
+                        </button>
+                        <button class="btn-decision" onclick="makeDecision('scenario2', 'report')">
+                            Document the incident and report to HR
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Scenario 2 Feedback -->
+            <div class="slide" id="slide5">
+                <div class="content-area">
+                    <div class="feedback-container">
+                        <div class="feedback-header">
+                            <div class="feedback-icon" id="feedbackIcon2">✓</div>
+                            <h2 id="feedbackTitle2">Good Response!</h2>
+                        </div>
+                        <div class="feedback-content" id="feedbackContent2">
+                            <p>Taking action to address workplace harassment is crucial.</p>
+                        </div>
+                        <div class="learning-points">
+                            <h3>Key Learning Points:</h3>
+                            <ul id="learningPoints2">
+                                <li>Bystander intervention is everyone's responsibility</li>
+                                <li>Document incidents for proper reporting</li>
+                                <li>Support colleagues in uncomfortable situations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn-primary" onclick="nextSlide()">Take the Assessment</button>
+                </div>
+            </div>
+
+            <!-- Slide 6: Quiz Introduction -->
+            <div class="slide" id="slide6">
+                <div class="content-area">
+                    <div class="quiz-intro">
+                        <h2>Knowledge Assessment</h2>
+                        <p>Test your understanding with this 5-question quiz. You need 80% to pass.</p>
+                        <div class="quiz-info">
+                            <div class="info-item">
+                                <strong>Questions:</strong> 5
+                            </div>
+                            <div class="info-item">
+                                <strong>Passing Score:</strong> 80%
+                            </div>
+                            <div class="info-item">
+                                <strong>Time Limit:</strong> None
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn-primary" onclick="startQuiz()">Begin Assessment</button>
+                </div>
+            </div>
+
+            <!-- Quiz Slides -->
+            <div class="slide quiz-slide" id="quiz1">
+                <div class="content-area">
+                    <div class="quiz-header">
+                        <h3>Question 1 of 5</h3>
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-fill" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <p>What should you do if a colleague asks you to share confidential project information?</p>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                <span>Share it if they seem trustworthy</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                <span>Politely decline and refer to company policy</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                <span>Share only non-sensitive details</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="d">
+                                <span>Ask your manager first</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn-primary" onclick="nextQuizQuestion(1)">Next Question</button>
+                </div>
+            </div>
+
+            <!-- Additional quiz questions would follow similar pattern -->
+            <div class="slide quiz-slide" id="quiz2">
+                <div class="content-area">
+                    <div class="quiz-header">
+                        <h3>Question 2 of 5</h3>
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-fill" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <p>If you witness workplace harassment, what is the most appropriate immediate action?</p>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="a">
+                                <span>Ignore it to avoid conflict</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="b">
+                                <span>Intervene safely and document the incident</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="c">
+                                <span>Tell the victim to handle it themselves</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="d">
+                                <span>Gossip about it with other colleagues</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn-primary" onclick="nextQuizQuestion(2)">Next Question</button>
+                </div>
+            </div>
+
+            <!-- Quiz Results -->
+            <div class="slide" id="quizResults">
+                <div class="content-area">
+                    <div class="results-container">
+                        <div class="results-header">
+                            <div class="results-icon" id="resultsIcon">🏆</div>
+                            <h2 id="resultsTitle">Assessment Complete!</h2>
+                        </div>
+                        <div class="results-score">
+                            <div class="score-circle">
+                                <span class="score-number" id="scoreNumber">85</span>
+                                <span class="score-percent">%</span>
+                            </div>
+                            <p class="score-status" id="scoreStatus">Passed!</p>
+                        </div>
+                        <div class="results-breakdown" id="resultsBreakdown">
+                            <p>You answered <strong>4 out of 5</strong> questions correctly.</p>
+                            <p>You have successfully completed the Compliance Training.</p>
+                        </div>
+                        <div class="certificate-section">
+                            <button class="btn-secondary" onclick="generateCertificate()">
+                                📜 Generate Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn-primary" onclick="completeCourse()">Complete Course</button>
+                </div>
+            </div>
+
+            <!-- Completion Slide -->
+            <div class="slide" id="completion">
+                <div class="content-area">
+                    <div class="completion-container">
+                        <div class="completion-icon">🎉</div>
+                        <h2>Congratulations!</h2>
+                        <p>You have successfully completed the Interactive Compliance Training.</p>
+                        <div class="completion-stats">
+                            <div class="stat-item">
+                                <strong>Time Spent:</strong> <span id="timeSpent">12 minutes</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Score:</strong> <span id="finalScore">85%</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>Status:</strong> <span class="passed">Passed</span>
+                            </div>
+                        </div>
+                        <div class="next-steps">
+                            <h3>Next Steps:</h3>
+                            <ul>
+                                <li>Review your certificate</li>
+                                <li>Apply these principles in your daily work</li>
+                                <li>Share knowledge with your team</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn-primary" onclick="restartCourse()">Restart Course</button>
+                    <button class="btn-secondary" onclick="exitCourse()">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

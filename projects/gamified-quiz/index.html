@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamified Safety Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Game Header -->
+        <header class="game-header">
+            <div class="header-content">
+                <div class="game-logo">
+                    <div class="logo-icon">🎮</div>
+                    <h1>Safety Quest</h1>
+                </div>
+                <div class="game-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-value" id="currentScore">0</div>
+                        <div class="stat-label">Score</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-value" id="currentLevel">1</div>
+                        <div class="stat-label">Level</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">❤️</div>
+                        <div class="stat-value" id="currentLives">3</div>
+                        <div class="stat-label">Lives</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="gameProgress"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="questionCounter">Question 1 of 10</span>
+                    <span id="timeRemaining">30s</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Container -->
+        <main class="game-container">
+            <!-- Welcome Screen -->
+            <section class="game-screen active" id="welcomeScreen">
+                <div class="welcome-content">
+                    <div class="welcome-hero">
+                        <div class="hero-icon">🛡️</div>
+                        <h2>Welcome to Safety Quest!</h2>
+                        <p>Test your workplace safety knowledge in this interactive quiz game.</p>
+                    </div>
+                    
+                    <div class="game-features">
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">⚡</div>
+                                <h3>Fast-Paced</h3>
+                                <p>30 seconds per question</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🎯</div>
+                                <h3>Challenging</h3>
+                                <p>10 safety scenarios</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🏅</div>
+                                <h3>Rewarding</h3>
+                                <p>Earn badges & points</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="difficulty-selection">
+                        <h3>Choose Your Difficulty</h3>
+                        <div class="difficulty-buttons">
+                            <button class="difficulty-btn" data-difficulty="easy" onclick="selectDifficulty('easy')">
+                                <div class="difficulty-icon">🟢</div>
+                                <div class="difficulty-info">
+                                    <h4>Beginner</h4>
+                                    <p>45 seconds per question</p>
+                                </div>
+                            </button>
+                            <button class="difficulty-btn selected" data-difficulty="normal" onclick="selectDifficulty('normal')">
+                                <div class="difficulty-icon">🟡</div>
+                                <div class="difficulty-info">
+                                    <h4>Standard</h4>
+                                    <p>30 seconds per question</p>
+                                </div>
+                            </button>
+                            <button class="difficulty-btn" data-difficulty="hard" onclick="selectDifficulty('hard')">
+                                <div class="difficulty-icon">🔴</div>
+                                <div class="difficulty-info">
+                                    <h4>Expert</h4>
+                                    <p>20 seconds per question</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="start-section">
+                        <button class="start-btn" onclick="startGame()">
+                            <span class="btn-icon">🚀</span>
+                            Start Safety Quest
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Game Screen -->
+            <section class="game-screen" id="gameScreen">
+                <div class="question-container">
+                    <div class="question-header">
+                        <div class="scenario-badge" id="scenarioBadge">Scenario 1</div>
+                        <div class="timer-circle">
+                            <svg class="timer-ring" width="60" height="60">
+                                <circle class="timer-ring-bg" stroke="#e0e0e0" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                <circle class="timer-ring-progress" stroke="#FF6B6B" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <div class="timer-text" id="timerText">30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="question-content">
+                        <div class="scenario-image" id="scenarioImage">
+                            <div class="image-placeholder">
+                                <div class="scenario-icon">⚠️</div>
+                            </div>
+                        </div>
+                        
+                        <div class="question-text">
+                            <h3 id="questionTitle">Loading question...</h3>
+                            <p id="questionDescription">Please wait while we load the next scenario.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-grid" id="answerGrid">
+                            <!-- Answers will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Power-ups -->
+                <div class="powerups-container">
+                    <button class="powerup-btn" id="fiftyFifty" onclick="usePowerup('fiftyFifty')" title="Remove 2 wrong answers">
+                        <div class="powerup-icon">50/50</div>
+                        <div class="powerup-count">1</div>
+                    </button>
+                    <button class="powerup-btn" id="extraTime" onclick="usePowerup('extraTime')" title="Add 15 seconds">
+                        <div class="powerup-icon">⏰</div>
+                        <div class="powerup-count">1</div>
+                    </button>
+                    <button class="powerup-btn" id="skipQuestion" onclick="usePowerup('skipQuestion')" title="Skip this question">
+                        <div class="powerup-icon">⏭️</div>
+                        <div class="powerup-count">1</div>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Screen -->
+            <section class="game-screen" id="resultsScreen">
+                <div class="results-content">
+                    <div class="results-header">
+                        <div class="results-icon" id="resultsIcon">🏆</div>
+                        <h2 id="resultsTitle">Quest Complete!</h2>
+                        <div class="final-score">
+                            <span class="score-label">Final Score</span>
+                            <span class="score-value" id="finalScore">0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-breakdown">
+                        <div class="performance-grid">
+                            <div class="performance-card">
+                                <div class="performance-icon">✅</div>
+                                <div class="performance-value" id="correctAnswers">0</div>
+                                <div class="performance-label">Correct</div>
+                            </div>
+                            <div class="performance-card">
+                                <div class="performance-icon">❌</div>
+                                <div class="performance-value" id="incorrectAnswers">0</div>
+                                <div class="performance-label">Incorrect</div>
+                            </div>
+                            <div class="performance-card">
+                                <div class="performance-icon">⚡</div>
+                                <div class="performance-value" id="averageTime">0s</div>
+                                <div class="performance-label">Avg Time</div>
+                            </div>
+                            <div class="performance-card">
+                                <div class="performance-icon">🎯</div>
+                                <div class="performance-value" id="accuracy">0%</div>
+                                <div class="performance-label">Accuracy</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="badges-earned">
+                        <h3>Badges Earned</h3>
+                        <div class="badges-grid" id="badgesGrid">
+                            <!-- Badges will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="leaderboard-section">
+                        <h3>Leaderboard Position</h3>
+                        <div class="leaderboard-card">
+                            <div class="position-info">
+                                <div class="position-rank" id="playerRank">#1</div>
+                                <div class="position-details">
+                                    <div class="player-name">You</div>
+                                    <div class="player-score" id="leaderboardScore">0 points</div>
+                                </div>
+                            </div>
+                            <div class="rank-badge" id="rankBadge">🥇</div>
+                        </div>
+                        
+                        <div class="top-scores">
+                            <h4>Top 3 Scores Today</h4>
+                            <div class="scores-list" id="topScores">
+                                <!-- Top scores will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="results-actions">
+                        <button class="action-btn primary" onclick="playAgain()">
+                            <span class="btn-icon">🔄</span>
+                            Play Again
+                        </button>
+                        <button class="action-btn secondary" onclick="shareResults()">
+                            <span class="btn-icon">📤</span>
+                            Share Results
+                        </button>
+                        <button class="action-btn secondary" onclick="viewCertificate()">
+                            <span class="btn-icon">📜</span>
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feedback Modal -->
+            <div class="modal-overlay" id="feedbackModal">
+                <div class="modal-content">
+                    <div class="feedback-header">
+                        <div class="feedback-icon" id="feedbackIcon">✅</div>
+                        <h3 id="feedbackTitle">Correct!</h3>
+                    </div>
+                    <div class="feedback-body">
+                        <p id="feedbackText">Great job! You selected the correct safety procedure.</p>
+                        <div class="feedback-explanation" id="feedbackExplanation">
+                            <!-- Detailed explanation will be shown here -->
+                        </div>
+                        <div class="points-earned">
+                            <span class="points-text">Points Earned:</span>
+                            <span class="points-value" id="pointsEarned">+100</span>
+                        </div>
+                    </div>
+                    <div class="feedback-actions">
+                        <button class="continue-btn" onclick="nextQuestion()">
+                            Continue <span class="btn-arrow">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Toast -->
+            <div class="achievement-toast" id="achievementToast">
+                <div class="achievement-content">
+                    <div class="achievement-icon">🏅</div>
+                    <div class="achievement-text">
+                        <div class="achievement-title">Achievement Unlocked!</div>
+                        <div class="achievement-description" id="achievementDescription">Speed Demon</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sound Effects (hidden audio elements) -->
+        <audio id="correctSound" preload="auto">
+            <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+        </audio>
+        <audio id="incorrectSound" preload="auto">
+            <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+        </audio>
+        <audio id="achievementSound" preload="auto">
+            <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+        </audio>
+    </div>
+
+    <script src="game-data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

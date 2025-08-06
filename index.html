@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior eLearning Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-lucide="graduation-cap" class="h-8 w-8 text-blue-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900" id="nav-name">Loading...</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#demos" class="nav-link">Interactive Demos</a>
+                    <a href="#lms-admin" class="nav-link">LMS Administration</a>
+                    <a href="#skills" class="nav-link">Skills Matrix</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-btn">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 bg-gradient-to-br from-blue-600 to-indigo-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-8">
+                    <div class="w-32 h-32 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="user-circle" class="h-16 w-16"></i>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4" id="hero-name">Loading...</h1>
+                    <p class="text-xl md:text-2xl text-blue-200 mb-6" id="hero-title">Loading...</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-medium">Articulate 360</span>
+                    <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-medium">Moodle LMS</span>
+                    <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-medium">SCORM/xAPI</span>
+                    <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-medium">Adobe Creative Suite</span>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <a href="#demos" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
+                        View Demos
+                    </a>
+                    <a href="#contact" id="contact-btn" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demos Section -->
+    <section id="demos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Interactive Demos</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Fully functional eLearning modules built with industry-standard tools
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Demo 1 -->
+                <div class="demo-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="demo-container">
+                        <iframe src="projects/compliance/index.html" 
+                                width="100%" 
+                                height="400" 
+                                frameborder="0" 
+                                allowfullscreen
+                                title="Interactive Compliance Training Demo">
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">🏆 Interactive Compliance Training</h3>
+                        <p class="text-gray-600 mb-4">Branching scenario-based training with scored assessments and progress tracking.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Storyline 360</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">SCORM 1.2</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Vyond</span>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                            <a href="projects/compliance/index.html" target="_blank" class="text-white no-underline">Launch Full Demo</a>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Demo 2 -->
+                <div class="demo-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="demo-container">
+                        <iframe src="projects/microlearning/index.html" 
+                                width="100%" 
+                                height="400" 
+                                frameborder="0" 
+                                allowfullscreen
+                                title="Mobile Microlearning Series Demo">
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">📱 Mobile-First Microlearning</h3>
+                        <p class="text-gray-600 mb-4">Responsive design optimized for mobile consumption with offline capability.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Rise 360</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">xAPI</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Adobe XD</span>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                            <a href="projects/microlearning/index.html" target="_blank" class="text-white no-underline">Launch Full Demo</a>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Demo 3 -->
+                <div class="demo-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="demo-container">
+                        <iframe src="projects/gamified-quiz/index.html" 
+                                width="100%" 
+                                height="400" 
+                                frameborder="0" 
+                                allowfullscreen
+                                title="Gamified Safety Assessment Demo">
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">🎮 Gamified Safety Assessment</h3>
+                        <p class="text-gray-600 mb-4">Interactive quiz game with leaderboards and achievement badges.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">H5P</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">CSS3</span>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                            <a href="projects/gamified-quiz/index.html" target="_blank" class="text-white no-underline">Launch Full Demo</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LMS Administration Section -->
+    <section id="lms-admin" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">LMS Administration Excellence</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Proven track record of optimizing learning management systems for scale and performance
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <!-- Moodle Optimization -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="server" class="h-6 w-6 text-orange-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Moodle Optimization</h3>
+                            <p class="text-gray-600">Performance & Infrastructure</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="metric-item">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Server Load Reduction</span>
+                                <span class="text-2xl font-bold text-green-600">65%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-green-600 h-3 rounded-full" style="width: 65%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-2">Through query optimization & cron restructuring</p>
+                        </div>
+
+                        <div class="metric-item">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">System Uptime</span>
+                                <span class="text-2xl font-bold text-blue-600">99.9%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full" style="width: 99%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-2">Improved from 99.1% baseline</p>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Key Improvements:</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Database query optimization</li>
+                                <li>• Custom caching implementation</li>
+                                <li>• Automated backup scheduling</li>
+                                <li>• Plugin performance auditing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Docebo Administration -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="users" class="h-6 w-6 text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Docebo Enterprise</h3>
+                            <p class="text-gray-600">User Management & Analytics</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="metric-item">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">User Engagement</span>
+                                <span class="text-2xl font-bold text-green-600">+127%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-green-600 h-3 rounded-full" style="width: 80%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-2">Custom learning paths & gamification</p>
+                        </div>
+
+                        <div class="metric-item">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Completion Rate</span>
+                                <span class="text-2xl font-bold text-blue-600">94%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full" style="width: 94%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-2">Industry average: 76%</p>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Dashboard Features:</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Real-time analytics reporting</li>
+                                <li>• Automated user onboarding</li>
+                                <li>• Multi-branch administration</li>
+                                <li>• Custom API integrations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LMS Screenshots Gallery -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Admin Dashboard Screenshots</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="screenshot-placeholder bg-gradient-to-br from-blue-500 to-indigo-600 aspect-video rounded-lg flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <i data-lucide="bar-chart-3" class="h-12 w-12 mx-auto mb-2"></i>
+                            <p class="font-medium">Custom Analytics Dashboard</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-placeholder bg-gradient-to-br from-green-500 to-teal-600 aspect-video rounded-lg flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <i data-lucide="settings" class="h-12 w-12 mx-auto mb-2"></i>
+                            <p class="font-medium">User Management Panel</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-placeholder bg-gradient-to-br from-purple-500 to-pink-600 aspect-video rounded-lg flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <i data-lucide="database" class="h-12 w-12 mx-auto mb-2"></i>
+                            <p class="font-medium">Performance Monitoring</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600 text-center mt-4">
+                    <i data-lucide="info" class="h-4 w-4 inline mr-1"></i>
+                    Screenshots available upon request to maintain client confidentiality
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Matrix Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technical Skills Matrix</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive expertise across the eLearning technology stack
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Authoring Tools -->
+                <div class="skill-category bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="edit" class="h-8 w-8 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Authoring Tools</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Articulate 360</span>
+                                <span class="text-sm text-gray-600">Expert</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Adobe Captivate</span>
+                                <span class="text-sm text-gray-600">Advanced</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">H5P</span>
+                                <span class="text-sm text-gray-600">Expert</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LMS Platforms -->
+                <div class="skill-category bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="monitor" class="h-8 w-8 text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">LMS Platforms</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Moodle</span>
+                                <span class="text-sm text-gray-600">Expert</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Docebo</span>
+                                <span class="text-sm text-gray-600">Advanced</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Canvas</span>
+                                <span class="text-sm text-gray-600">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Standards & APIs -->
+                <div class="skill-category bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="code" class="h-8 w-8 text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Standards & APIs</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">SCORM 1.2/2004</span>
+                                <span class="text-sm text-gray-600">Expert</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">xAPI (Tin Can)</span>
+                                <span class="text-sm text-gray-600">Advanced</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">AICC</span>
+                                <span class="text-sm text-gray-600">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative Tools -->
+                <div class="skill-category bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="palette" class="h-8 w-8 text-orange-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Creative Tools</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Adobe Creative Suite</span>
+                                <span class="text-sm text-gray-600">Advanced</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-orange-600 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Vyond</span>
+                                <span class="text-sm text-gray-600">Expert</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-orange-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Camtasia</span>
+                                <span class="text-sm text-gray-600">Advanced</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-orange-600 h-2 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Build Something Amazing</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Ready to elevate your organization's learning experience? Let's discuss your project.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="bg-gray-800 rounded-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                                    <input type="text" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                                    <input type="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Project Type</label>
+                                <select class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                                    <option>Course Development</option>
+                                    <option>LMS Implementation</option>
+                                    <option>System Optimization</option>
+                                    <option>Consultation</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                                <textarea rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-gray-800 rounded-xl p-8">
+                        <h3 class="text-xl font-bold mb-4">Quick Stats</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-300">Projects Completed</span>
+                                <span class="text-2xl font-bold text-blue-400">150+</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-300">Learners Reached</span>
+                                <span class="text-2xl font-bold text-green-400">50K+</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-300">LMS Implementations</span>
+                                <span class="text-2xl font-bold text-purple-400">25+</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-300">Years Experience</span>
+                                <span class="text-2xl font-bold text-orange-400">8+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl p-8">
+                        <h3 class="text-xl font-bold mb-4">Certifications</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i data-lucide="award" class="h-5 w-5 text-yellow-400 mr-3"></i>
+                                <span class="text-gray-300">Articulate Certified Expert</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="award" class="h-5 w-5 text-yellow-400 mr-3"></i>
+                                <span class="text-gray-300">Moodle Site Administrator</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="award" class="h-5 w-5 text-yellow-400 mr-3"></i>
+                                <span class="text-gray-300">Adobe Certified Professional</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="award" class="h-5 w-5 text-yellow-400 mr-3"></i>
+                                <span class="text-gray-300">xAPI Tin Can Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i data-lucide="graduation-cap" class="h-6 w-6 text-blue-400 mr-2"></i>
+                    <span class="text-lg font-semibold" id="footer-name">Loading...</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <i data-lucide="linkedin" class="h-5 w-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <i data-lucide="github" class="h-5 w-5"></i>
+                    </a>
+                    <a href="#" id="footer-email" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <i data-lucide="mail" class="h-5 w-5"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 text-sm mt-8">
+                <p>&copy; 2024 Senior eLearning Developer Portfolio. Built with modern web technologies.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
