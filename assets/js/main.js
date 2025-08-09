@@ -37,11 +37,7 @@ function populateUserInfo(config) {
   if (heroName) heroName.textContent = config.name;
   if (heroTitle) heroTitle.textContent = config.title;
   
-  // Update contact button
-  const contactBtn = document.getElementById('contact-btn');
-  if (contactBtn && config.email) {
-    contactBtn.href = `mailto:${config.email}`;
-  }
+  // Contact button already has href="#contact" for scrolling to contact section
   
   // Update footer
   const footerName = document.getElementById('footer-name');
